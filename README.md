@@ -1,25 +1,39 @@
-# README
+# cash_register
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
+    `3.1.3`
 
 * Database creation
 
-* Database initialization
+    `rake db:create`
+
+    `rake db:migrate`
+
+* Database seeding
+
+    `rake db:seed`
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+    `rspec`
 
-* Deployment instructions
+* How to run CLI
 
-* ...
-# cash_register
+    `rake calculate_order_total_price`
+
+* Models
+
+    `Product`
+
+    `SalePromotion (GreaterOrEqualPromotion, LastInGroupPromotion)`
+
+* Services
+
+    `Orders:Parse`
+
+    `Orders:GenerateSummary`
+
+    `Orders:ApplyPromotions`
+
+    `Orders:CalculateTotalPrice`
