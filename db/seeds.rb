@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+[
+  { code: 'GR1', name: 'Green Tea', price_cents: 311 },
+  { code: "SR1", name: "Strawberries", price_cents: 500 },
+  { code: "CF1", name: "Coffee", price_cents: 1123 }
+].each do |attributes|
+  Product.find_or_create_by(code: attributes[:code]) { _1.assign_attributes(**attributes) }
+end

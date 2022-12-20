@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+class CreateProducts < ActiveRecord::Migration[7.0]
+  def change
+    create_table :products do |t|
+      t.string :code, index: true, unique: true
+      t.string :name
+      t.integer :price_cents
+
+      t.timestamps
+    end
+  end
+end
